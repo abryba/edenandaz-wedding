@@ -3,36 +3,45 @@
 **Sunday, 18 October 2026 · The Overseas Passenger Terminal, The Rocks, Sydney**
 
 A light, airy, editorial single-page wedding website built from the design
-decks (Place of LB ideation + Studio Roux WIP) and the copy doc. Pure
-HTML/CSS/JS — no build step, no dependencies — hostable anywhere
-(GitHub Pages, Netlify, Vercel, etc.).
+decks (Place of LB ideation + Studio Roux WIP), the copy doc and the approved
+palette board. Pure HTML/CSS/JS — no build step, no dependencies — hostable
+anywhere (GitHub Pages, Netlify, Vercel, etc.).
+
+## Experience
+
+1. **Cover page** — a calm, sunlit, auto-playing ocean scene (animated sky,
+   low sun, shimmering sun path, three slowly drifting wave layers) with the
+   hand-drawn **Eden & Aaron** logo, ringed by a self-drawing ink stroke.
+   Guests click the logo and the cover lifts away in a smooth sweep to reveal
+   the site. Deep links (e.g. `…/#wedding`) skip the cover automatically.
+2. **Invitation** — full invite copy with a custom postage-stamp illustration
+3. **Countdown** — live to 1:00 pm AEDT, 18 October 2026
+4. **Wedding** — when / where / to follow / dress code + map link
+5. **Aufruf** — the pink square: Saturday 10 October 2026, The Central Synagogue
+6. **Details** — FAQ accordion (registry, children, dress code, parking, comms, contact)
+7. **RSVP** — mailto `edenandaz@gmail.com`
+
+### Optional: real ocean footage
+
+Drop a calm, licensed ocean clip at **`assets/ocean.mp4`** and the cover will
+automatically play it behind the logo (muted, looped). Without the file, the
+built-in animated scene is the backdrop — no other change needed.
 
 ## Design language
 
-- **Feel** (from the ideation brief): light, airy, ethereal, elevated, minimal, seamless
-- **Palette**: bone `#efece6`, ink `#1d1c19`, poppy red `#ff3131` (sparing accent),
-  olive `#555d3e`, sand `#c4b991`, dusty rose `#ba8f85` — all editable as CSS
-  variables at the top of `css/styles.css`
-- **Type**: Cormorant Garamond (clean serif) + Jost (spaced uppercase labels) +
-  Caveat for the hand-drawn headings with red underline strokes
-- **Features from the brief**: moving backdrop with names on landing, the invite
-  as a card with a custom postage-stamp illustration, hand-drawn section
-  headings, the Aufruf as a pink square, details/FAQ and RSVP sections
-
-## Sections
-
-1. **Hero** — animated colour wash + botanical/poppy line art, EDEN & AARON
-2. **Invitation** — full invite copy with stamp illustration
-3. **Countdown** — live countdown to 1:00 pm AEDT, 18 Oct 2026
-4. **Wedding** — when / where / to follow / dress code + map link
-5. **Aufruf** — Saturday 10 October 2026, The Central Synagogue
-6. **Details** — FAQ accordion (registry, children, dress code, parking, comms, contact)
-7. **RSVP** — mailto `edenandaz@gmail.com`
+- **Palette** (per the palette board, as CSS variables in `css/styles.css`):
+  cream `#f2ebd1` · mist `#d7ddd8` · slate `#809499` · olive `#555d3e` ·
+  brown `#6e5d4b` — highlights bronze `#c4b991` and rose `#ba8f85`
+- **Type**: Jost (clean sans-serif) for all body copy; Caveat for the
+  hand-drawn logo, headers and accents, with bronze underline strokes
+- Motion respects `prefers-reduced-motion`, and the site works without
+  JavaScript (the cover steps aside via `<noscript>`)
 
 ## Still to add (marked `PLACEHOLDER` in the code)
 
 - Bank details for the wishing well (Details → registry answer in `index.html`)
 - An RSVP form link, if preferred over the mailto button
+- Optional `assets/ocean.mp4` footage
 
 ## Preview locally
 
@@ -50,7 +59,7 @@ Repo **Settings → Pages → Source: Deploy from a branch**, pick the branch an
 
 ```
 index.html        — all page content (edit text here)
-css/styles.css    — theme variables, layout, animations
-js/main.js        — wedding date, countdown, nav, scroll reveals
-assets/           — favicon
+css/styles.css    — palette variables, layout, cover scene, animations
+js/main.js        — wedding date, cover transition, countdown, nav, reveals
+assets/           — favicon (+ optional ocean.mp4)
 ```

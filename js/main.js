@@ -5,6 +5,45 @@
 /* Ceremony start: 1:00 pm, Sunday 18 October 2026, Sydney (AEDT, UTC+11) */
 const WEDDING_DATE = new Date("2026-10-18T13:00:00+11:00");
 
+/* ---------- Cover page ---------- */
+const cover = document.getElementById("cover");
+const enterBtn = document.getElementById("enterSite");
+const coverVideo = document.getElementById("coverVideo");
+
+let entered = false;
+
+function enterSite(skipAnimation = false) {
+  if (entered) return;
+  entered = true;
+  if (skipAnimation) cover.classList.add("cover--skip");
+  cover.classList.add("cover--open");
+  document.body.classList.remove("no-scroll");
+  document.body.classList.add("entered");
+  initReveals();
+  const cleanup = () => {
+    cover.style.display = "none";
+    if (coverVideo) coverVideo.pause();
+  };
+  if (skipAnimation) cleanup();
+  else setTimeout(cleanup, 1400);
+}
+
+enterBtn.addEventListener("click", () => enterSite());
+
+/* Arriving via a shared deep link (e.g. #wedding) skips the cover */
+if (window.location.hash) {
+  enterSite(true);
+}
+
+/* Optional real ocean footage: only show the <video> once it can play.
+   If assets/ocean.mp4 is missing, the animated scene stays as backdrop. */
+if (coverVideo) {
+  coverVideo.addEventListener("canplay", () => {
+    coverVideo.classList.add("cover__video--ready");
+  });
+  coverVideo.addEventListener("error", () => coverVideo.remove(), true);
+}
+
 /* ---------- Sticky nav ---------- */
 const nav = document.getElementById("nav");
 const navToggle = document.getElementById("navToggle");
@@ -55,22 +94,28 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-/* ---------- Scroll reveal ---------- */
-const revealEls = document.querySelectorAll(".reveal");
+/* ---------- Scroll reveal (starts once the cover lifts) ---------- */
+let revealsInitialised = false;
 
-if ("IntersectionObserver" in window) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("reveal--visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
-  );
-  revealEls.forEach((el) => observer.observe(el));
-} else {
-  revealEls.forEach((el) => el.classList.add("reveal--visible"));
+function initReveals() {
+  if (revealsInitialised) return;
+  revealsInitialised = true;
+  const revealEls = document.querySelectorAll(".reveal");
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("reveal--visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+    );
+    revealEls.forEach((el) => observer.observe(el));
+  } else {
+    revealEls.forEach((el) => el.classList.add("reveal--visible"));
+  }
 }
