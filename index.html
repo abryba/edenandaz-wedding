@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eden &amp; Az — We're Getting Married</title>
+  <meta name="description" content="Join us as we celebrate our wedding. Find all the details — schedule, travel, accommodations, and RSVP — right here." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <header class="nav" id="nav">
+    <a href="#home" class="nav__monogram" aria-label="Back to top">E<span class="nav__amp">&amp;</span>A</a>
+    <nav class="nav__links" id="navLinks" aria-label="Main navigation">
+      <a href="#story">Our Story</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#travel">Travel &amp; Stay</a>
+      <a href="#faq">FAQ</a>
+      <a href="#rsvp" class="nav__rsvp">RSVP</a>
+    </nav>
+    <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="home">
+    <div class="hero__botanical hero__botanical--left" aria-hidden="true">
+      <svg viewBox="0 0 200 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path class="stem" d="M100 600 C 80 450, 120 300, 90 150 C 80 90, 95 40, 110 0" />
+        <path class="leaf" d="M92 480 C 50 460, 30 420, 38 380 C 80 395, 98 440, 92 480 Z" />
+        <path class="leaf" d="M98 360 C 140 345, 165 305, 160 265 C 118 278, 98 320, 98 360 Z" />
+        <path class="leaf" d="M90 250 C 48 235, 28 195, 33 155 C 75 168, 93 210, 90 250 Z" />
+        <path class="leaf" d="M102 140 C 142 128, 164 90, 160 52 C 120 64, 102 102, 102 140 Z" />
+      </svg>
+    </div>
+    <div class="hero__botanical hero__botanical--right" aria-hidden="true">
+      <svg viewBox="0 0 200 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path class="stem" d="M100 600 C 120 450, 80 300, 110 150 C 120 90, 105 40, 90 0" />
+        <path class="leaf" d="M108 480 C 150 460, 170 420, 162 380 C 120 395, 102 440, 108 480 Z" />
+        <path class="leaf" d="M102 360 C 60 345, 35 305, 40 265 C 82 278, 102 320, 102 360 Z" />
+        <path class="leaf" d="M110 250 C 152 235, 172 195, 167 155 C 125 168, 107 210, 110 250 Z" />
+        <path class="leaf" d="M98 140 C 58 128, 36 90, 40 52 C 80 64, 98 102, 98 140 Z" />
+      </svg>
+    </div>
+
+    <div class="hero__content">
+      <p class="hero__eyebrow reveal">Together with their families</p>
+      <h1 class="hero__names reveal">
+        <span>Eden</span>
+        <span class="hero__amp">&amp;</span>
+        <span>Az</span>
+      </h1>
+      <div class="hero__rule reveal" aria-hidden="true"></div>
+      <p class="hero__invite reveal">joyfully invite you to celebrate their wedding</p>
+      <!-- PLACEHOLDER: update the real date & venue below (and the countdown date in js/main.js) -->
+      <p class="hero__date reveal">Saturday, June 12, 2027</p>
+      <p class="hero__location reveal">Venue To Be Announced</p>
+      <a href="#rsvp" class="btn btn--gold reveal">RSVP</a>
+    </div>
+
+    <a href="#countdown" class="hero__scroll" aria-label="Scroll down">
+      <span class="hero__scroll-line"></span>
+    </a>
+  </section>
+
+  <!-- ===================== COUNTDOWN ===================== -->
+  <section class="countdown" id="countdown">
+    <p class="section__eyebrow reveal">Counting down to forever</p>
+    <div class="countdown__grid reveal" id="countdownGrid">
+      <div class="countdown__cell"><span id="cdDays">—</span><small>Days</small></div>
+      <div class="countdown__cell"><span id="cdHours">—</span><small>Hours</small></div>
+      <div class="countdown__cell"><span id="cdMinutes">—</span><small>Minutes</small></div>
+      <div class="countdown__cell"><span id="cdSeconds">—</span><small>Seconds</small></div>
+    </div>
+  </section>
+
+  <!-- ===================== OUR STORY ===================== -->
+  <section class="section section--cream" id="story">
+    <div class="section__inner section__inner--narrow">
+      <p class="section__eyebrow reveal">Our Story</p>
+      <h2 class="section__title reveal">How it all began</h2>
+      <div class="story reveal">
+        <!-- PLACEHOLDER: replace with the couple's real story -->
+        <p>
+          Every love story is beautiful, but ours is our favorite. From the moment we met,
+          we knew there was something special between us — and every day since has only
+          made us more certain.
+        </p>
+        <p>
+          Now, surrounded by the people we love most, we can't wait to begin the next
+          chapter together. We are so grateful you'll be part of our day.
+        </p>
+        <p class="story__signoff">With all our love,<br /><span class="script">Eden &amp; Az</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SCHEDULE ===================== -->
+  <section class="section" id="schedule">
+    <div class="section__inner">
+      <p class="section__eyebrow reveal">The Big Day</p>
+      <h2 class="section__title reveal">Schedule of Events</h2>
+      <!-- PLACEHOLDER: confirm times, names, and locations for each event -->
+      <div class="timeline">
+        <article class="timeline__item reveal">
+          <div class="timeline__time">4:00 <small>PM</small></div>
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <div class="timeline__body">
+            <h3>Ceremony</h3>
+            <p>We say "I do." Please arrive a little early to find your seat.</p>
+          </div>
+        </article>
+        <article class="timeline__item reveal">
+          <div class="timeline__time">5:00 <small>PM</small></div>
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <div class="timeline__body">
+            <h3>Cocktail Hour</h3>
+            <p>Drinks, hors d'oeuvres, and golden-hour mingling while we sneak away for photos.</p>
+          </div>
+        </article>
+        <article class="timeline__item reveal">
+          <div class="timeline__time">6:30 <small>PM</small></div>
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <div class="timeline__body">
+            <h3>Reception &amp; Dinner</h3>
+            <p>Dinner, toasts, and time together with our favorite people.</p>
+          </div>
+        </article>
+        <article class="timeline__item reveal">
+          <div class="timeline__time">8:30 <small>PM</small></div>
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <div class="timeline__body">
+            <h3>Dancing</h3>
+            <p>Kick off your shoes — the dance floor is open until late.</p>
+          </div>
+        </article>
+        <article class="timeline__item reveal">
+          <div class="timeline__time">11:00 <small>PM</small></div>
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <div class="timeline__body">
+            <h3>Send-Off</h3>
+            <p>One last hurrah as we head off into married life.</p>
+          </div>
+        </article>
+      </div>
+      <p class="schedule__dress reveal">
+        <span class="schedule__dress-label">Dress code</span>
+        <!-- PLACEHOLDER: confirm dress code -->
+        Cocktail attire — wear what makes you feel wonderful.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== TRAVEL & STAY ===================== -->
+  <section class="section section--cream" id="travel">
+    <div class="section__inner">
+      <p class="section__eyebrow reveal">Travel &amp; Stay</p>
+      <h2 class="section__title reveal">Getting there &amp; where to rest</h2>
+      <div class="cards">
+        <!-- PLACEHOLDER: fill in real venue, hotels, and travel details -->
+        <article class="card reveal">
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 21s-7-6.1-7-11a7 7 0 1 1 14 0c0 4.9-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          </div>
+          <h3>The Venue</h3>
+          <p>Venue name and address to be announced. Check back soon for directions and parking details.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-6h6v6"/><path d="M3 21h18"/></svg>
+          </div>
+          <h3>Where to Stay</h3>
+          <p>We're arranging a room block at a nearby hotel — booking link and group rate coming soon.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M2 16l20-6-9 8-2-4-4-1Z"/><path d="M13 18l-1 4"/></svg>
+          </div>
+          <h3>Getting Around</h3>
+          <p>Airport, rideshare, and shuttle information will be posted here as the day gets closer.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== RSVP ===================== -->
+  <section class="rsvp" id="rsvp">
+    <div class="rsvp__card reveal">
+      <p class="section__eyebrow">Kindly Reply</p>
+      <h2 class="section__title">Will you join us?</h2>
+      <p class="rsvp__copy">
+        We can't wait to celebrate with you. Please let us know whether you'll be able
+        to make it.
+        <!-- PLACEHOLDER: confirm the RSVP deadline -->
+        <strong>Kindly respond by May 1, 2027.</strong>
+      </p>
+      <!-- PLACEHOLDER: point this button at your RSVP form (Google Form, Zola, etc.) or keep the mailto -->
+      <a class="btn btn--gold" href="mailto:aaronbryba@gmail.com?subject=Wedding%20RSVP%20—%20Eden%20%26%20Az">RSVP by Email</a>
+      <p class="rsvp__note">Questions? Write to us any time — we'd love to hear from you.</p>
+    </div>
+  </section>
+
+  <!-- ===================== FAQ ===================== -->
+  <section class="section" id="faq">
+    <div class="section__inner section__inner--narrow">
+      <p class="section__eyebrow reveal">Good to Know</p>
+      <h2 class="section__title reveal">Frequently Asked Questions</h2>
+      <!-- PLACEHOLDER: tailor these answers to your actual plans -->
+      <div class="faq reveal">
+        <details>
+          <summary>Can I bring a plus one?<span class="faq__chevron" aria-hidden="true"></span></summary>
+          <p>Your invitation will note the names of everyone in your party. If you have any questions, just reach out — we'll be happy to help.</p>
+        </details>
+        <details>
+          <summary>Are children welcome?<span class="faq__chevron" aria-hidden="true"></span></summary>
+          <p>We love your little ones! Details about whether the celebration is adults-only will be included with your invitation.</p>
+        </details>
+        <details>
+          <summary>What should I wear?<span class="faq__chevron" aria-hidden="true"></span></summary>
+          <p>Cocktail attire. Parts of the celebration may be outdoors, so consider comfortable shoes and a light layer for the evening.</p>
+        </details>
+        <details>
+          <summary>Will the ceremony be indoors or outdoors?<span class="faq__chevron" aria-hidden="true"></span></summary>
+          <p>We'll share the full details — along with a weather plan — closer to the day.</p>
+        </details>
+        <details>
+          <summary>Is there a registry?<span class="faq__chevron" aria-hidden="true"></span></summary>
+          <p>Your presence is the greatest present. For those who wish to give a gift, our registry information will be posted here soon.</p>
+        </details>
+        <details>
+          <summary>Can I take photos during the ceremony?<span class="faq__chevron" aria-hidden="true"></span></summary>
+          <p>We're planning an unplugged ceremony — our photographer will capture everything, and we'll share the photos with you. Afterward, snap away!</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer__monogram script">E &amp; A</div>
+    <p class="footer__line">We can't wait to celebrate with you.</p>
+    <p class="footer__date">06 . 12 . 2027</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
