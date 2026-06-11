@@ -1,9 +1,9 @@
 /* ============================================================
-   Eden & Az — Wedding Website
+   Eden & Aaron — Wedding Website
    ============================================================ */
 
-/* PLACEHOLDER: set the real ceremony date/time (with timezone offset). */
-const WEDDING_DATE = new Date("2027-06-12T16:00:00-04:00");
+/* Ceremony start: 1:00 pm, Sunday 18 October 2026, Sydney (AEDT, UTC+11) */
+const WEDDING_DATE = new Date("2026-10-18T13:00:00+11:00");
 
 /* ---------- Sticky nav ---------- */
 const nav = document.getElementById("nav");

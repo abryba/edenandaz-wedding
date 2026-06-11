@@ -1,22 +1,26 @@
 /* ============================================================
-   Eden & Az — Wedding Website
-   Palette + type scale live here; edit the variables to retheme.
+   Eden & Aaron — 18 October 2026 — Sydney
+   Light · Airy · Ethereal · Elevated · Minimal · Seamless
+   Palette from the design decks: bone, ink, poppy red, olive,
+   sand and dusty rose. Edit the variables below to retheme.
    ============================================================ */
 
 :root {
-  --ivory: #faf7f0;
-  --cream: #f3eee2;
-  --ink: #33312b;
-  --ink-soft: #6b675c;
-  --sage: #7c8a6e;
-  --sage-deep: #4c573f;
-  --gold: #b08d4f;
-  --gold-soft: #cdb285;
-  --hairline: rgba(76, 87, 63, 0.22);
+  --bone: #efece6;          /* page background */
+  --bone-deep: #e7e3da;
+  --paper: #fdfcf9;         /* cards */
+  --ink: #1d1c19;
+  --ink-soft: #6f6a60;
+  --poppy: #ff3131;         /* accent — used sparingly */
+  --olive: #555d3e;
+  --sand: #c4b991;
+  --rose: #ba8f85;
+  --rose-wash: #f1ddd7;     /* the "pink square" */
+  --hairline: rgba(29, 28, 25, 0.16);
 
   --serif: "Cormorant Garamond", Georgia, serif;
   --sans: "Jost", "Helvetica Neue", sans-serif;
-  --script: "Pinyon Script", cursive;
+  --hand: "Caveat", cursive;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,7 +31,7 @@ body {
   font-family: var(--sans);
   font-weight: 300;
   color: var(--ink);
-  background: var(--ivory);
+  background: var(--bone);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
@@ -36,31 +40,36 @@ img, svg { display: block; max-width: 100%; }
 
 a { color: inherit; }
 
-.script { font-family: var(--script); }
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.amp-script {
+  font-family: var(--hand);
+  color: var(--poppy);
+}
 
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-block;
   font-family: var(--sans);
-  font-size: 0.8rem;
-  letter-spacing: 0.28em;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   text-decoration: none;
-  padding: 1rem 2.8rem;
-  border: 1px solid currentColor;
-  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-
-.btn--gold {
-  color: var(--ivory);
-  background: var(--sage-deep);
-  border-color: var(--sage-deep);
-}
-
-.btn--gold:hover {
+  padding: 1rem 3rem;
+  color: var(--ink);
+  border: 1px solid var(--ink);
   background: transparent;
-  color: var(--sage-deep);
+  transition: background 0.3s ease, color 0.3s ease;
 }
+
+.btn:hover { background: var(--ink); color: var(--bone); }
 
 /* ---------- Navigation ---------- */
 .nav {
@@ -75,7 +84,7 @@ a { color: inherit; }
 }
 
 .nav--scrolled {
-  background: rgba(250, 247, 240, 0.88);
+  background: rgba(239, 236, 230, 0.9);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 1px 0 var(--hairline);
@@ -85,17 +94,17 @@ a { color: inherit; }
 
 .nav__monogram {
   font-family: var(--serif);
-  font-size: 1.5rem;
-  letter-spacing: 0.12em;
+  font-size: 1.45rem;
+  letter-spacing: 0.14em;
   text-decoration: none;
-  color: var(--sage-deep);
+  color: var(--ink);
 }
 
 .nav__amp {
-  font-family: var(--script);
-  font-size: 1.1rem;
-  color: var(--gold);
-  margin: 0 0.1em;
+  font-family: var(--hand);
+  font-size: 1.15rem;
+  color: var(--poppy);
+  margin: 0 0.08em;
 }
 
 .nav__links {
@@ -105,8 +114,8 @@ a { color: inherit; }
 }
 
 .nav__links a {
-  font-size: 0.78rem;
-  letter-spacing: 0.22em;
+  font-size: 0.76rem;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   text-decoration: none;
   color: var(--ink);
@@ -119,20 +128,19 @@ a { color: inherit; }
   position: absolute;
   left: 0; right: 100%; bottom: 0;
   height: 1px;
-  background: var(--gold);
+  background: var(--poppy);
   transition: right 0.3s ease;
 }
 
 .nav__links a:hover::after { right: 0; }
 
 .nav__links .nav__rsvp {
-  border: 1px solid var(--sage-deep);
-  padding: 0.45rem 1.4rem;
-  color: var(--sage-deep);
+  border: 1px solid var(--ink);
+  padding: 0.45rem 1.5rem;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-.nav__links .nav__rsvp:hover { background: var(--sage-deep); color: var(--ivory); }
+.nav__links .nav__rsvp:hover { background: var(--ink); color: var(--bone); }
 .nav__links .nav__rsvp::after { display: none; }
 
 .nav__toggle {
@@ -152,7 +160,7 @@ a { color: inherit; }
   transition: transform 0.3s ease;
 }
 
-/* ---------- Hero ---------- */
+/* ---------- Hero — the moving backdrop ---------- */
 .hero {
   position: relative;
   min-height: 100svh;
@@ -161,107 +169,109 @@ a { color: inherit; }
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  background:
-    radial-gradient(ellipse 90% 60% at 50% -10%, rgba(124, 138, 110, 0.16), transparent 60%),
-    radial-gradient(ellipse 70% 50% at 50% 115%, rgba(176, 141, 79, 0.14), transparent 60%),
-    var(--ivory);
   padding: 6rem 1.5rem 4rem;
 }
 
-.hero__botanical {
+/* slow, ethereal colour wash */
+.hero__wash {
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(ellipse 45% 38% at 22% 28%, rgba(196, 185, 145, 0.30), transparent 70%),
+    radial-gradient(ellipse 42% 36% at 80% 22%, rgba(186, 143, 133, 0.24), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 70% 82%, rgba(85, 93, 62, 0.16), transparent 70%),
+    var(--bone);
+  animation: washDrift 26s ease-in-out infinite alternate;
+}
+
+@keyframes washDrift {
+  0%   { transform: translate3d(-2.5%, -1.5%, 0) scale(1); }
+  100% { transform: translate3d(2.5%, 1.5%, 0) scale(1.06); }
+}
+
+.hero__art {
   position: absolute;
   bottom: -4%;
-  width: clamp(120px, 18vw, 240px);
-  opacity: 0.5;
+  width: clamp(120px, 17vw, 230px);
+  opacity: 0.55;
   pointer-events: none;
 }
 
-.hero__botanical--left { left: clamp(-30px, 2vw, 60px); }
-.hero__botanical--right { right: clamp(-30px, 2vw, 60px); }
+.hero__art--left { left: clamp(-28px, 2vw, 64px); }
+.hero__art--right { right: clamp(-28px, 2vw, 64px); }
 
-.hero__botanical .stem {
-  stroke: var(--sage);
-  stroke-width: 1.5;
-}
-
-.hero__botanical .leaf {
-  fill: none;
-  stroke: var(--sage);
-  stroke-width: 1.2;
-}
+.hero__art .stem { stroke: var(--olive); stroke-width: 1.5; }
+.hero__art .leaf { fill: none; stroke: var(--olive); stroke-width: 1.1; }
+.hero__art .bud { fill: none; stroke: var(--poppy); stroke-width: 1.2; }
+.hero__art .petal { fill: none; stroke: var(--poppy); stroke-width: 1.1; }
 
 @keyframes sway {
   0%, 100% { transform: rotate(0deg); }
   50% { transform: rotate(2.2deg); }
 }
 
-.hero__botanical svg {
+.hero__art svg {
   transform-origin: bottom center;
-  animation: sway 9s ease-in-out infinite;
+  animation: sway 10s ease-in-out infinite;
 }
 
-.hero__botanical--right svg { animation-delay: -4.5s; }
+.hero__art--right svg { animation-delay: -5s; }
 
-.hero__content { max-width: 60rem; }
+.hero__content {
+  position: relative;
+  max-width: 64rem;
+}
 
 .hero__eyebrow {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   letter-spacing: 0.42em;
   text-transform: uppercase;
   color: var(--ink-soft);
-  margin-bottom: 2rem;
+  margin-bottom: 2.4rem;
 }
 
 .hero__names {
   font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(3.2rem, 11vw, 7.5rem);
-  line-height: 1.05;
-  letter-spacing: 0.06em;
+  font-weight: 300;
+  font-size: clamp(3.4rem, 12vw, 8.5rem);
+  line-height: 0.96;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--ink);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: clamp(0.6rem, 2vw, 1.6rem);
-  flex-wrap: wrap;
 }
 
 .hero__amp {
-  font-family: var(--script);
-  font-size: 0.62em;
-  color: var(--gold);
-  transform: translateY(0.06em);
-}
-
-.hero__rule {
-  width: 64px;
-  height: 1px;
-  background: var(--gold);
-  margin: 2.2rem auto;
+  font-family: var(--hand);
+  font-weight: 400;
+  font-size: 0.5em;
+  text-transform: none;
+  color: var(--poppy);
+  line-height: 1.15;
 }
 
 .hero__invite {
   font-family: var(--serif);
   font-style: italic;
-  font-size: clamp(1.1rem, 2.4vw, 1.45rem);
+  font-size: clamp(1.15rem, 2.4vw, 1.5rem);
   color: var(--ink-soft);
-  margin-bottom: 1.8rem;
+  margin: 2rem 0 2.8rem;
 }
 
-.hero__date {
-  font-size: 0.95rem;
-  letter-spacing: 0.34em;
-  text-transform: uppercase;
-  color: var(--sage-deep);
-}
-
-.hero__location {
-  font-size: 0.82rem;
+.hero__enter {
+  font-size: 0.78rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--ink-soft);
-  margin: 0.6rem 0 2.6rem;
+  text-decoration: none;
+  color: var(--ink);
+  border-bottom: 1px solid var(--poppy);
+  padding-bottom: 0.4rem;
+  transition: color 0.3s ease, border-color 0.3s ease;
 }
+
+.hero__enter:hover { color: var(--poppy); }
 
 .hero__scroll {
   position: absolute;
@@ -286,7 +296,7 @@ a { color: inherit; }
   left: 0;
   width: 100%;
   height: 40%;
-  background: var(--gold);
+  background: var(--poppy);
   animation: scrollHint 2.2s ease-in-out infinite;
 }
 
@@ -295,27 +305,109 @@ a { color: inherit; }
   100% { top: 110%; }
 }
 
+/* ---------- Invitation ---------- */
+.invitation {
+  padding: clamp(5rem, 11vw, 8.5rem) 1.5rem;
+  background: var(--bone-deep);
+}
+
+.invitation__card {
+  position: relative;
+  max-width: 44rem;
+  margin: 0 auto;
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  outline: 1px solid var(--hairline);
+  outline-offset: 7px;
+  box-shadow: 0 30px 60px -42px rgba(29, 28, 25, 0.45);
+  padding: clamp(3rem, 8vw, 5.5rem) clamp(1.5rem, 6vw, 4.5rem);
+  text-align: center;
+}
+
+.invitation__stamp {
+  position: absolute;
+  top: clamp(1rem, 3vw, 1.8rem);
+  right: clamp(1rem, 3vw, 1.8rem);
+  width: clamp(72px, 11vw, 104px);
+  transform: rotate(5deg);
+  filter: drop-shadow(0 4px 10px rgba(29, 28, 25, 0.12));
+}
+
+.invitation__names {
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+}
+
+.invitation__names .amp-script { font-size: 0.8em; }
+
+.invitation__underline {
+  width: clamp(150px, 30vw, 220px);
+  margin: 0.4rem auto 2.2rem;
+}
+
+.invitation__line {
+  font-family: var(--serif);
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+  color: var(--ink-soft);
+}
+
+.invitation__line--em {
+  font-style: italic;
+  margin-top: 0.6rem;
+  color: var(--ink);
+}
+
+.invitation__divider {
+  width: 56px;
+  height: 1px;
+  background: var(--sand);
+  margin: 2.2rem auto;
+}
+
+.invitation__when {
+  font-size: 0.92rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.invitation__where {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  margin: 0.8rem 0 2.4rem;
+}
+
 /* ---------- Countdown ---------- */
 .countdown {
   text-align: center;
-  padding: clamp(4rem, 9vw, 7rem) 1.5rem;
-  border-top: 1px solid var(--hairline);
+  padding: clamp(4rem, 9vw, 6.5rem) 1.5rem;
   border-bottom: 1px solid var(--hairline);
-  background: var(--cream);
+}
+
+.section__eyebrow {
+  font-size: 0.74rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
 }
 
 .countdown__grid {
   display: flex;
   justify-content: center;
   gap: clamp(1.5rem, 6vw, 4.5rem);
-  margin-top: 2.5rem;
+  margin-top: 2.4rem;
 }
 
 .countdown__cell span {
   font-family: var(--serif);
   font-size: clamp(2.4rem, 6vw, 4rem);
   font-weight: 300;
-  color: var(--sage-deep);
+  color: var(--ink);
   display: block;
   line-height: 1;
   font-variant-numeric: tabular-nums;
@@ -324,7 +416,7 @@ a { color: inherit; }
 .countdown__cell small {
   display: block;
   margin-top: 0.7rem;
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   letter-spacing: 0.32em;
   text-transform: uppercase;
   color: var(--ink-soft);
@@ -335,219 +427,125 @@ a { color: inherit; }
   padding: clamp(5rem, 11vw, 8.5rem) 1.5rem;
 }
 
-.section--cream { background: var(--cream); }
-
 .section__inner {
-  max-width: 64rem;
+  max-width: 62rem;
   margin: 0 auto;
 }
 
 .section__inner--narrow { max-width: 46rem; }
 
-.section__eyebrow {
-  font-size: 0.75rem;
-  letter-spacing: 0.4em;
-  text-transform: uppercase;
-  color: var(--gold);
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.section__title {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(2rem, 5vw, 3rem);
-  text-align: center;
+/* hand-drawn headings */
+.handline {
+  font-family: var(--hand);
+  font-weight: 500;
+  font-size: clamp(3rem, 7vw, 4.6rem);
+  line-height: 1;
   color: var(--ink);
+  text-align: center;
   margin-bottom: clamp(2.5rem, 6vw, 4rem);
 }
 
-/* ---------- Story ---------- */
-.story {
-  text-align: center;
-  font-size: 1.05rem;
-  color: var(--ink-soft);
+.handline--small { font-size: clamp(2.5rem, 5.5vw, 3.4rem); }
+
+.handline__stroke {
+  width: clamp(150px, 26vw, 240px);
+  margin: 0.3rem auto 0;
 }
 
-.story p + p { margin-top: 1.4rem; }
-
-.story__signoff {
-  margin-top: 2.6rem !important;
-  color: var(--ink);
-}
-
-.story__signoff .script {
-  font-size: 2.2rem;
-  color: var(--sage-deep);
-  display: inline-block;
-  margin-top: 0.5rem;
-}
-
-/* ---------- Schedule / timeline ---------- */
-.timeline {
-  position: relative;
-  max-width: 40rem;
-  margin: 0 auto;
-}
-
-.timeline::before {
-  content: "";
-  position: absolute;
-  left: 7.2rem;
-  top: 0.6rem;
-  bottom: 0.6rem;
-  width: 1px;
-  background: var(--hairline);
-}
-
-.timeline__item {
+/* ---------- Wedding ---------- */
+.wedding__grid {
   display: grid;
-  grid-template-columns: 5.6rem 3.2rem 1fr;
-  align-items: start;
-  padding: 1.4rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1px;
+  background: var(--hairline);
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
 }
 
-.timeline__time {
-  font-family: var(--serif);
-  font-size: 1.5rem;
-  color: var(--sage-deep);
-  text-align: right;
-  line-height: 1.2;
-  white-space: nowrap;
-}
-
-.timeline__time small {
-  font-family: var(--sans);
-  font-size: 0.65rem;
-  letter-spacing: 0.18em;
-  color: var(--ink-soft);
-  vertical-align: 0.35em;
-}
-
-.timeline__dot {
-  width: 9px;
-  height: 9px;
-  border: 1px solid var(--gold);
-  background: var(--ivory);
-  border-radius: 50%;
-  justify-self: center;
-  margin-top: 0.55rem;
-}
-
-.timeline__body h3 {
-  font-family: var(--serif);
-  font-weight: 500;
-  font-size: 1.35rem;
-  color: var(--ink);
-  margin-bottom: 0.25rem;
-}
-
-.timeline__body p {
-  font-size: 0.95rem;
-  color: var(--ink-soft);
-}
-
-.schedule__dress {
+.wedding__block {
+  background: var(--bone);
+  padding: 2.8rem 1.8rem;
   text-align: center;
-  margin: 3.5rem auto 0;
-  max-width: 32rem;
+}
+
+.wedding__label {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 0.72rem;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: var(--poppy);
+  margin-bottom: 1rem;
+}
+
+.wedding__block p {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.wedding__map {
+  text-align: center;
+  margin-top: 2.6rem;
+}
+
+.wedding__map a {
+  font-size: 0.76rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink-soft);
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 0.3rem;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.wedding__map a:hover { color: var(--poppy); border-color: var(--poppy); }
+
+/* ---------- Aufruf — the pink square ---------- */
+.aufruf {
+  padding: clamp(4rem, 9vw, 7rem) 1.5rem;
+  background: var(--rose-wash);
+}
+
+.aufruf__square {
+  max-width: 34rem;
+  margin: 0 auto;
+  background: var(--paper);
+  border: 1px solid rgba(186, 143, 133, 0.5);
+  padding: clamp(2.5rem, 7vw, 4rem) clamp(1.5rem, 5vw, 3.5rem);
+  text-align: center;
+  box-shadow: 0 24px 50px -40px rgba(120, 70, 60, 0.5);
+}
+
+.aufruf__square .handline { margin-bottom: 1.8rem; }
+
+.aufruf__copy {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  color: var(--ink);
+}
+
+.aufruf__copy strong { font-weight: 600; }
+
+.aufruf__venue {
+  font-size: 0.84rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 1.6rem 0;
+  line-height: 2;
+}
+
+.aufruf__lchaim {
   font-family: var(--serif);
   font-style: italic;
-  font-size: 1.15rem;
-  color: var(--ink-soft);
+  font-size: 1.1rem;
+  color: var(--rose);
 }
 
-.schedule__dress-label {
-  display: block;
-  font-family: var(--sans);
-  font-style: normal;
-  font-size: 0.72rem;
-  letter-spacing: 0.34em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 0.5rem;
-}
-
-/* ---------- Cards (Travel & Stay) ---------- */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 1.5rem;
-}
-
-.card {
-  background: var(--ivory);
-  border: 1px solid var(--hairline);
-  padding: 2.6rem 2rem;
-  text-align: center;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 40px -24px rgba(76, 87, 63, 0.35);
-}
-
-.card__icon {
-  width: 44px;
-  height: 44px;
-  margin: 0 auto 1.4rem;
-  color: var(--gold);
-}
-
-.card h3 {
-  font-family: var(--serif);
-  font-weight: 500;
-  font-size: 1.4rem;
-  margin-bottom: 0.6rem;
-}
-
-.card p {
-  font-size: 0.92rem;
-  color: var(--ink-soft);
-}
-
-/* ---------- RSVP ---------- */
-.rsvp {
-  padding: clamp(5rem, 11vw, 8.5rem) 1.5rem;
-  background:
-    radial-gradient(ellipse 80% 90% at 50% 120%, rgba(176, 141, 79, 0.18), transparent 65%),
-    var(--sage-deep);
-}
-
-.rsvp__card {
-  max-width: 42rem;
-  margin: 0 auto;
-  text-align: center;
-  background: var(--ivory);
-  padding: clamp(2.5rem, 7vw, 4.5rem) clamp(1.5rem, 6vw, 4rem);
-  border: 1px solid rgba(176, 141, 79, 0.4);
-  outline: 1px solid rgba(176, 141, 79, 0.4);
-  outline-offset: 6px;
-}
-
-.rsvp__card .section__title { margin-bottom: 1.4rem; }
-
-.rsvp__copy {
-  color: var(--ink-soft);
-  margin-bottom: 2.2rem;
-}
-
-.rsvp__copy strong {
-  display: block;
-  margin-top: 0.9rem;
-  font-weight: 500;
-  color: var(--sage-deep);
-  letter-spacing: 0.04em;
-}
-
-.rsvp__note {
-  margin-top: 1.8rem;
-  font-size: 0.85rem;
-  color: var(--ink-soft);
-}
-
-/* ---------- FAQ ---------- */
+/* ---------- FAQ / Details ---------- */
 .faq details {
   border-bottom: 1px solid var(--hairline);
 }
@@ -563,7 +561,7 @@ a { color: inherit; }
   gap: 1rem;
   padding: 1.3rem 0.2rem;
   font-family: var(--serif);
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 500;
   color: var(--ink);
   transition: color 0.25s ease;
@@ -571,14 +569,14 @@ a { color: inherit; }
 
 .faq summary::-webkit-details-marker { display: none; }
 
-.faq summary:hover { color: var(--sage-deep); }
+.faq summary:hover { color: var(--poppy); }
 
 .faq__chevron {
   flex: none;
   width: 9px;
   height: 9px;
-  border-right: 1px solid var(--gold);
-  border-bottom: 1px solid var(--gold);
+  border-right: 1px solid var(--poppy);
+  border-bottom: 1px solid var(--poppy);
   transform: rotate(45deg);
   transition: transform 0.3s ease;
 }
@@ -592,19 +590,58 @@ a { color: inherit; }
   max-width: 40rem;
 }
 
+.faq details a { color: var(--ink); }
+
+/* ---------- RSVP ---------- */
+.rsvp {
+  padding: clamp(5rem, 11vw, 8.5rem) 1.5rem;
+  background:
+    radial-gradient(ellipse 80% 90% at 50% 130%, rgba(196, 185, 145, 0.28), transparent 65%),
+    var(--olive);
+}
+
+.rsvp__card {
+  max-width: 40rem;
+  margin: 0 auto;
+  text-align: center;
+  background: var(--paper);
+  padding: clamp(2.5rem, 7vw, 4.5rem) clamp(1.5rem, 6vw, 4rem);
+  border: 1px solid var(--hairline);
+  outline: 1px solid rgba(253, 252, 249, 0.4);
+  outline-offset: 6px;
+}
+
+.rsvp__card .handline { margin-bottom: 1.6rem; }
+
+.rsvp__copy {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  color: var(--ink);
+  margin-bottom: 2.2rem;
+}
+
+.rsvp__note {
+  margin-top: 1.6rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  color: var(--ink-soft);
+}
+
 /* ---------- Footer ---------- */
 .footer {
   text-align: center;
   padding: 4.5rem 1.5rem 3.5rem;
-  background: var(--cream);
-  border-top: 1px solid var(--hairline);
 }
 
-.footer__monogram {
-  font-size: 2.6rem;
-  color: var(--sage-deep);
+.footer__names {
+  font-family: var(--serif);
+  font-size: 2rem;
+  letter-spacing: 0.18em;
+  color: var(--ink);
   margin-bottom: 0.8rem;
 }
+
+.footer__names .amp-script { font-size: 0.85em; }
 
 .footer__line {
   font-family: var(--serif);
@@ -614,9 +651,9 @@ a { color: inherit; }
 
 .footer__date {
   margin-top: 0.6rem;
-  font-size: 0.75rem;
-  letter-spacing: 0.4em;
-  color: var(--gold);
+  font-size: 0.74rem;
+  letter-spacing: 0.42em;
+  color: var(--poppy);
 }
 
 /* ---------- Scroll reveal ---------- */
@@ -631,18 +668,17 @@ a { color: inherit; }
   transform: none;
 }
 
-/* Stagger siblings slightly for a softer cascade */
 .reveal:nth-child(2) { transition-delay: 0.08s; }
 .reveal:nth-child(3) { transition-delay: 0.16s; }
 .reveal:nth-child(4) { transition-delay: 0.24s; }
 .reveal:nth-child(5) { transition-delay: 0.32s; }
 .reveal:nth-child(6) { transition-delay: 0.4s; }
-.reveal:nth-child(7) { transition-delay: 0.48s; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
-  .hero__botanical svg,
+  .hero__wash,
+  .hero__art svg,
   .hero__scroll-line::after { animation: none; }
 }
 
@@ -653,7 +689,7 @@ a { color: inherit; }
   .nav__links {
     position: fixed;
     inset: 0;
-    background: var(--ivory);
+    background: var(--bone);
     flex-direction: column;
     justify-content: center;
     gap: 2.2rem;
@@ -670,9 +706,7 @@ a { color: inherit; }
   .nav__toggle { z-index: 110; }
   .nav__monogram { z-index: 110; position: relative; }
 
-  .timeline::before { left: 6.4rem; }
-  .timeline__item { grid-template-columns: 4.8rem 3.2rem 1fr; }
-  .timeline__time { font-size: 1.2rem; }
+  .hero__art { opacity: 0.3; }
 
-  .hero__botanical { opacity: 0.3; }
+  .invitation__stamp { transform: rotate(5deg) scale(0.9); }
 }

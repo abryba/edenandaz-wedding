@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eden &amp; Az — We're Getting Married</title>
-  <meta name="description" content="Join us as we celebrate our wedding. Find all the details — schedule, travel, accommodations, and RSVP — right here." />
+  <title>Eden &amp; Aaron — Sunday, 18 October 2026 — Sydney</title>
+  <meta name="description" content="Eden & Aaron, together with Ingrid, Mark, Nicky and Tony, are delighted to invite you to celebrate their marriage. Sunday, 18 October 2026 — The Overseas Passenger Terminal, Sydney." />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -17,10 +17,10 @@
   <header class="nav" id="nav">
     <a href="#home" class="nav__monogram" aria-label="Back to top">E<span class="nav__amp">&amp;</span>A</a>
     <nav class="nav__links" id="navLinks" aria-label="Main navigation">
-      <a href="#story">Our Story</a>
-      <a href="#schedule">Schedule</a>
-      <a href="#travel">Travel &amp; Stay</a>
-      <a href="#faq">FAQ</a>
+      <a href="#invitation">Invitation</a>
+      <a href="#wedding">Wedding</a>
+      <a href="#aufruf">Aufruf</a>
+      <a href="#details">Details</a>
       <a href="#rsvp" class="nav__rsvp">RSVP</a>
     </nav>
     <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
@@ -28,50 +28,85 @@
     </button>
   </header>
 
-  <!-- ===================== HERO ===================== -->
+  <!-- ===================== HERO — moving backdrop with names ===================== -->
   <section class="hero" id="home">
-    <div class="hero__botanical hero__botanical--left" aria-hidden="true">
-      <svg viewBox="0 0 200 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path class="stem" d="M100 600 C 80 450, 120 300, 90 150 C 80 90, 95 40, 110 0" />
-        <path class="leaf" d="M92 480 C 50 460, 30 420, 38 380 C 80 395, 98 440, 92 480 Z" />
-        <path class="leaf" d="M98 360 C 140 345, 165 305, 160 265 C 118 278, 98 320, 98 360 Z" />
-        <path class="leaf" d="M90 250 C 48 235, 28 195, 33 155 C 75 168, 93 210, 90 250 Z" />
-        <path class="leaf" d="M102 140 C 142 128, 164 90, 160 52 C 120 64, 102 102, 102 140 Z" />
+    <div class="hero__wash" aria-hidden="true"></div>
+
+    <div class="hero__art hero__art--left" aria-hidden="true">
+      <svg viewBox="0 0 200 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path class="stem" d="M104 640 C 84 480, 124 320, 92 160 C 82 96, 98 42, 112 0" />
+        <path class="leaf" d="M94 510 C 50 488, 30 446, 38 404 C 82 420, 100 468, 94 510 Z" />
+        <path class="leaf" d="M100 384 C 144 368, 168 326, 162 284 C 118 298, 100 342, 100 384 Z" />
+        <path class="leaf" d="M92 266 C 48 250, 28 208, 34 166 C 78 180, 95 224, 92 266 Z" />
+        <circle class="bud" cx="118" cy="96" r="14" />
+        <path class="petal" d="M118 82 C 104 64, 110 40, 126 30 C 138 44, 134 70, 118 82 Z" />
+        <path class="petal" d="M126 86 C 146 74, 170 80, 178 98 C 162 110, 138 104, 126 86 Z" />
       </svg>
     </div>
-    <div class="hero__botanical hero__botanical--right" aria-hidden="true">
-      <svg viewBox="0 0 200 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path class="stem" d="M100 600 C 120 450, 80 300, 110 150 C 120 90, 105 40, 90 0" />
-        <path class="leaf" d="M108 480 C 150 460, 170 420, 162 380 C 120 395, 102 440, 108 480 Z" />
-        <path class="leaf" d="M102 360 C 60 345, 35 305, 40 265 C 82 278, 102 320, 102 360 Z" />
-        <path class="leaf" d="M110 250 C 152 235, 172 195, 167 155 C 125 168, 107 210, 110 250 Z" />
-        <path class="leaf" d="M98 140 C 58 128, 36 90, 40 52 C 80 64, 98 102, 98 140 Z" />
+    <div class="hero__art hero__art--right" aria-hidden="true">
+      <svg viewBox="0 0 200 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path class="stem" d="M96 640 C 116 480, 76 320, 108 160 C 118 96, 102 42, 88 0" />
+        <path class="leaf" d="M106 510 C 150 488, 170 446, 162 404 C 118 420, 100 468, 106 510 Z" />
+        <path class="leaf" d="M100 384 C 56 368, 32 326, 38 284 C 82 298, 100 342, 100 384 Z" />
+        <path class="leaf" d="M108 266 C 152 250, 172 208, 166 166 C 122 180, 105 224, 108 266 Z" />
+        <circle class="bud" cx="82" cy="96" r="14" />
+        <path class="petal" d="M82 82 C 96 64, 90 40, 74 30 C 62 44, 66 70, 82 82 Z" />
+        <path class="petal" d="M74 86 C 54 74, 30 80, 22 98 C 38 110, 62 104, 74 86 Z" />
       </svg>
     </div>
 
     <div class="hero__content">
-      <p class="hero__eyebrow reveal">Together with their families</p>
+      <p class="hero__eyebrow reveal">Sunday, 18 October 2026 &nbsp;·&nbsp; Sydney, Australia</p>
       <h1 class="hero__names reveal">
-        <span>Eden</span>
-        <span class="hero__amp">&amp;</span>
-        <span>Az</span>
+        <span class="hero__name">Eden</span>
+        <span class="hero__amp" aria-hidden="true">&amp;</span>
+        <span class="sr-only">and</span>
+        <span class="hero__name">Aaron</span>
       </h1>
-      <div class="hero__rule reveal" aria-hidden="true"></div>
-      <p class="hero__invite reveal">joyfully invite you to celebrate their wedding</p>
-      <!-- PLACEHOLDER: update the real date & venue below (and the countdown date in js/main.js) -->
-      <p class="hero__date reveal">Saturday, June 12, 2027</p>
-      <p class="hero__location reveal">Venue To Be Announced</p>
-      <a href="#rsvp" class="btn btn--gold reveal">RSVP</a>
+      <p class="hero__invite reveal">are getting married</p>
+      <a href="#invitation" class="hero__enter reveal">Open the invitation</a>
     </div>
 
-    <a href="#countdown" class="hero__scroll" aria-label="Scroll down">
+    <a href="#invitation" class="hero__scroll" aria-label="Scroll down">
       <span class="hero__scroll-line"></span>
     </a>
   </section>
 
+  <!-- ===================== INVITATION ===================== -->
+  <section class="invitation" id="invitation">
+    <div class="invitation__card reveal">
+      <div class="invitation__stamp" aria-hidden="true">
+        <svg viewBox="0 0 140 168" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="4" width="132" height="160" fill="#fdfcf9" />
+          <rect x="2" y="2" width="136" height="164" fill="none" stroke="#efece6" stroke-width="5"
+                stroke-dasharray="0.1 9" stroke-linecap="round" />
+          <rect x="14" y="14" width="112" height="140" fill="none" stroke="#ff3131" stroke-width="1" />
+          <!-- poppy -->
+          <path d="M70 128 C 68 104, 74 88, 70 66" stroke="#555d3e" stroke-width="1.4" fill="none" />
+          <path d="M70 100 C 56 96, 48 86, 50 76 C 62 80, 69 90, 70 100 Z" fill="none" stroke="#555d3e" stroke-width="1.1" />
+          <path d="M70 66 C 56 62, 50 48, 56 38 C 64 40, 70 50, 70 60 C 70 50, 77 40, 86 38 C 91 48, 84 62, 70 66 Z" fill="none" stroke="#ff3131" stroke-width="1.3" />
+          <circle cx="70" cy="60" r="3" fill="#ff3131" />
+          <text x="70" y="146" text-anchor="middle" font-family="Jost, sans-serif" font-size="8.5" letter-spacing="2.5" fill="#33312b">EDEN &amp; AARON</text>
+          <text x="70" y="28" text-anchor="middle" font-family="Jost, sans-serif" font-size="7.5" letter-spacing="2" fill="#9a958a">SYDNEY · 2026</text>
+        </svg>
+      </div>
+
+      <p class="invitation__names">Eden <span class="amp-script">&amp;</span> Aaron</p>
+      <svg class="invitation__underline" viewBox="0 0 220 12" aria-hidden="true">
+        <path d="M4 8 C 60 2, 160 2, 216 7" fill="none" stroke="#ff3131" stroke-width="1.6" stroke-linecap="round" />
+      </svg>
+      <p class="invitation__line">together with Ingrid, Mark, Nicky and Tony</p>
+      <p class="invitation__line invitation__line--em">are delighted to invite you<br />to celebrate their marriage</p>
+      <div class="invitation__divider" aria-hidden="true"></div>
+      <p class="invitation__when">Sunday, 18 October 2026</p>
+      <p class="invitation__where">The Overseas Passenger Terminal<br />Sydney, Australia</p>
+      <a href="#rsvp" class="btn reveal">RSVP</a>
+    </div>
+  </section>
+
   <!-- ===================== COUNTDOWN ===================== -->
   <section class="countdown" id="countdown">
-    <p class="section__eyebrow reveal">Counting down to forever</p>
+    <p class="section__eyebrow reveal">Until we say I do</p>
     <div class="countdown__grid reveal" id="countdownGrid">
       <div class="countdown__cell"><span id="cdDays">—</span><small>Days</small></div>
       <div class="countdown__cell"><span id="cdHours">—</span><small>Hours</small></div>
@@ -80,111 +115,98 @@
     </div>
   </section>
 
-  <!-- ===================== OUR STORY ===================== -->
-  <section class="section section--cream" id="story">
-    <div class="section__inner section__inner--narrow">
-      <p class="section__eyebrow reveal">Our Story</p>
-      <h2 class="section__title reveal">How it all began</h2>
-      <div class="story reveal">
-        <!-- PLACEHOLDER: replace with the couple's real story -->
-        <p>
-          Every love story is beautiful, but ours is our favorite. From the moment we met,
-          we knew there was something special between us — and every day since has only
-          made us more certain.
-        </p>
-        <p>
-          Now, surrounded by the people we love most, we can't wait to begin the next
-          chapter together. We are so grateful you'll be part of our day.
-        </p>
-        <p class="story__signoff">With all our love,<br /><span class="script">Eden &amp; Az</span></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== SCHEDULE ===================== -->
-  <section class="section" id="schedule">
+  <!-- ===================== WEDDING ===================== -->
+  <section class="section" id="wedding">
     <div class="section__inner">
-      <p class="section__eyebrow reveal">The Big Day</p>
-      <h2 class="section__title reveal">Schedule of Events</h2>
-      <!-- PLACEHOLDER: confirm times, names, and locations for each event -->
-      <div class="timeline">
-        <article class="timeline__item reveal">
-          <div class="timeline__time">4:00 <small>PM</small></div>
-          <div class="timeline__dot" aria-hidden="true"></div>
-          <div class="timeline__body">
-            <h3>Ceremony</h3>
-            <p>We say "I do." Please arrive a little early to find your seat.</p>
-          </div>
-        </article>
-        <article class="timeline__item reveal">
-          <div class="timeline__time">5:00 <small>PM</small></div>
-          <div class="timeline__dot" aria-hidden="true"></div>
-          <div class="timeline__body">
-            <h3>Cocktail Hour</h3>
-            <p>Drinks, hors d'oeuvres, and golden-hour mingling while we sneak away for photos.</p>
-          </div>
-        </article>
-        <article class="timeline__item reveal">
-          <div class="timeline__time">6:30 <small>PM</small></div>
-          <div class="timeline__dot" aria-hidden="true"></div>
-          <div class="timeline__body">
-            <h3>Reception &amp; Dinner</h3>
-            <p>Dinner, toasts, and time together with our favorite people.</p>
-          </div>
-        </article>
-        <article class="timeline__item reveal">
-          <div class="timeline__time">8:30 <small>PM</small></div>
-          <div class="timeline__dot" aria-hidden="true"></div>
-          <div class="timeline__body">
-            <h3>Dancing</h3>
-            <p>Kick off your shoes — the dance floor is open until late.</p>
-          </div>
-        </article>
-        <article class="timeline__item reveal">
-          <div class="timeline__time">11:00 <small>PM</small></div>
-          <div class="timeline__dot" aria-hidden="true"></div>
-          <div class="timeline__body">
-            <h3>Send-Off</h3>
-            <p>One last hurrah as we head off into married life.</p>
-          </div>
-        </article>
+      <h2 class="handline reveal">Wedding
+        <svg class="handline__stroke" viewBox="0 0 260 14" aria-hidden="true">
+          <path d="M5 10 C 70 3, 190 3, 255 8" fill="none" stroke="#ff3131" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </h2>
+      <div class="wedding__grid">
+        <div class="wedding__block reveal">
+          <h3 class="wedding__label">When</h3>
+          <p>Sunday, 18 October 2026<br />12:30 pm arrival<br />for a 1:00 pm ceremony start</p>
+        </div>
+        <div class="wedding__block reveal">
+          <h3 class="wedding__label">Where</h3>
+          <p>The Overseas Passenger Terminal<br />130 Argyle Street<br />The Rocks, NSW 2000</p>
+        </div>
+        <div class="wedding__block reveal">
+          <h3 class="wedding__label">To Follow</h3>
+          <p>Cocktails, a long lunch<br />and dancing</p>
+        </div>
+        <div class="wedding__block reveal">
+          <h3 class="wedding__label">Dress Code</h3>
+          <p>Spring Formal</p>
+        </div>
       </div>
-      <p class="schedule__dress reveal">
-        <span class="schedule__dress-label">Dress code</span>
-        <!-- PLACEHOLDER: confirm dress code -->
-        Cocktail attire — wear what makes you feel wonderful.
+      <p class="wedding__map reveal">
+        <a href="https://maps.google.com/?q=Overseas+Passenger+Terminal,+130+Argyle+Street,+The+Rocks+NSW+2000" target="_blank" rel="noopener">View on map ↗</a>
       </p>
     </div>
   </section>
 
-  <!-- ===================== TRAVEL & STAY ===================== -->
-  <section class="section section--cream" id="travel">
-    <div class="section__inner">
-      <p class="section__eyebrow reveal">Travel &amp; Stay</p>
-      <h2 class="section__title reveal">Getting there &amp; where to rest</h2>
-      <div class="cards">
-        <!-- PLACEHOLDER: fill in real venue, hotels, and travel details -->
-        <article class="card reveal">
-          <div class="card__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 21s-7-6.1-7-11a7 7 0 1 1 14 0c0 4.9-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
-          </div>
-          <h3>The Venue</h3>
-          <p>Venue name and address to be announced. Check back soon for directions and parking details.</p>
-        </article>
-        <article class="card reveal">
-          <div class="card__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-6h6v6"/><path d="M3 21h18"/></svg>
-          </div>
-          <h3>Where to Stay</h3>
-          <p>We're arranging a room block at a nearby hotel — booking link and group rate coming soon.</p>
-        </article>
-        <article class="card reveal">
-          <div class="card__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M2 16l20-6-9 8-2-4-4-1Z"/><path d="M13 18l-1 4"/></svg>
-          </div>
-          <h3>Getting Around</h3>
-          <p>Airport, rideshare, and shuttle information will be posted here as the day gets closer.</p>
-        </article>
+  <!-- ===================== AUFRUF — the pink square ===================== -->
+  <section class="aufruf" id="aufruf">
+    <div class="aufruf__square reveal">
+      <h2 class="handline handline--small">Aufruf
+        <svg class="handline__stroke" viewBox="0 0 200 14" aria-hidden="true">
+          <path d="M5 10 C 55 3, 145 3, 195 8" fill="none" stroke="#ff3131" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </h2>
+      <p class="aufruf__copy">
+        Aaron will be called to the Torah on<br />
+        <strong>Saturday, 10 October 2026 at 9:30 am</strong>
+      </p>
+      <p class="aufruf__venue">
+        The Central Synagogue<br />
+        15 Bon Accord Avenue, Bondi Junction
+      </p>
+      <p class="aufruf__lchaim">Please join us for a L&rsquo;chaim after the service</p>
+    </div>
+  </section>
+
+  <!-- ===================== DETAILS ===================== -->
+  <section class="section" id="details">
+    <div class="section__inner section__inner--narrow">
+      <h2 class="handline reveal">Details
+        <svg class="handline__stroke" viewBox="0 0 230 14" aria-hidden="true">
+          <path d="M5 10 C 62 3, 168 3, 225 8" fill="none" stroke="#ff3131" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </h2>
+      <div class="faq reveal">
+        <details>
+          <summary>Is there a registry or wishing well?<span class="faq__chevron" aria-hidden="true"></span></summary>
+          <p>Your love and presence in our lives, and at our wedding, is the greatest gift of all.
+             Should you wish to give us something to send us on our way, we would be deeply grateful
+             for a contribution towards our future together.</p>
+          <!-- PLACEHOLDER: bank details to be added here when ready -->
+        </details>
+        <details>
+          <summary>Are children invited?<span class="faq__chevron" aria-hidden="true"></span></summary>
+          <p>Whilst we love your children, this will be a child-free celebration.</p>
+        </details>
+        <details>
+          <summary>Any other information on the dress code?<span class="faq__chevron" aria-hidden="true"></span></summary>
+          <p>Spring Formal. Floor-length dresses and gowns for the women. Suit, no tie, for the gents
+             with formal footwear.</p>
+        </details>
+        <details>
+          <summary>Is there parking close by?<span class="faq__chevron" aria-hidden="true"></span></summary>
+          <p>The closest parking station is Wilson Parking at 155 George Street. As it is a Sunday,
+             there is also ample parking available on surrounding streets like Hickson Road.</p>
+        </details>
+        <details>
+          <summary>Final guest comms<span class="faq__chevron" aria-hidden="true"></span></summary>
+          <p>We will share a final email reminder with all details the week before our wedding, with
+             key reminders and any key updates.</p>
+        </details>
+        <details>
+          <summary>I still have questions!<span class="faq__chevron" aria-hidden="true"></span></summary>
+          <p>Please feel free to contact our planners, Laice &amp; Doug —
+             <a href="mailto:hello@placeoflb.com.au">hello@placeoflb.com.au</a></p>
+        </details>
       </div>
     </div>
   </section>
@@ -192,60 +214,22 @@
   <!-- ===================== RSVP ===================== -->
   <section class="rsvp" id="rsvp">
     <div class="rsvp__card reveal">
-      <p class="section__eyebrow">Kindly Reply</p>
-      <h2 class="section__title">Will you join us?</h2>
-      <p class="rsvp__copy">
-        We can't wait to celebrate with you. Please let us know whether you'll be able
-        to make it.
-        <!-- PLACEHOLDER: confirm the RSVP deadline -->
-        <strong>Kindly respond by May 1, 2027.</strong>
-      </p>
-      <!-- PLACEHOLDER: point this button at your RSVP form (Google Form, Zola, etc.) or keep the mailto -->
-      <a class="btn btn--gold" href="mailto:aaronbryba@gmail.com?subject=Wedding%20RSVP%20—%20Eden%20%26%20Az">RSVP by Email</a>
-      <p class="rsvp__note">Questions? Write to us any time — we'd love to hear from you.</p>
-    </div>
-  </section>
-
-  <!-- ===================== FAQ ===================== -->
-  <section class="section" id="faq">
-    <div class="section__inner section__inner--narrow">
-      <p class="section__eyebrow reveal">Good to Know</p>
-      <h2 class="section__title reveal">Frequently Asked Questions</h2>
-      <!-- PLACEHOLDER: tailor these answers to your actual plans -->
-      <div class="faq reveal">
-        <details>
-          <summary>Can I bring a plus one?<span class="faq__chevron" aria-hidden="true"></span></summary>
-          <p>Your invitation will note the names of everyone in your party. If you have any questions, just reach out — we'll be happy to help.</p>
-        </details>
-        <details>
-          <summary>Are children welcome?<span class="faq__chevron" aria-hidden="true"></span></summary>
-          <p>We love your little ones! Details about whether the celebration is adults-only will be included with your invitation.</p>
-        </details>
-        <details>
-          <summary>What should I wear?<span class="faq__chevron" aria-hidden="true"></span></summary>
-          <p>Cocktail attire. Parts of the celebration may be outdoors, so consider comfortable shoes and a light layer for the evening.</p>
-        </details>
-        <details>
-          <summary>Will the ceremony be indoors or outdoors?<span class="faq__chevron" aria-hidden="true"></span></summary>
-          <p>We'll share the full details — along with a weather plan — closer to the day.</p>
-        </details>
-        <details>
-          <summary>Is there a registry?<span class="faq__chevron" aria-hidden="true"></span></summary>
-          <p>Your presence is the greatest present. For those who wish to give a gift, our registry information will be posted here soon.</p>
-        </details>
-        <details>
-          <summary>Can I take photos during the ceremony?<span class="faq__chevron" aria-hidden="true"></span></summary>
-          <p>We're planning an unplugged ceremony — our photographer will capture everything, and we'll share the photos with you. Afterward, snap away!</p>
-        </details>
-      </div>
+      <h2 class="handline handline--small">RSVP
+        <svg class="handline__stroke" viewBox="0 0 160 14" aria-hidden="true">
+          <path d="M5 10 C 45 3, 115 3, 155 8" fill="none" stroke="#ff3131" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </h2>
+      <p class="rsvp__copy">We cannot wait to celebrate with you.<br />Kindly let us know if you are able to join us.</p>
+      <a class="btn" href="mailto:edenandaz@gmail.com?subject=RSVP%20%E2%80%94%20Eden%20%26%20Aaron%2C%2018%20October%202026">RSVP by Email</a>
+      <p class="rsvp__note">edenandaz@gmail.com</p>
     </div>
   </section>
 
   <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
-    <div class="footer__monogram script">E &amp; A</div>
-    <p class="footer__line">We can't wait to celebrate with you.</p>
-    <p class="footer__date">06 . 12 . 2027</p>
+    <p class="footer__names">E <span class="amp-script">&amp;</span> A</p>
+    <p class="footer__line">Sunday, 18 October 2026 · The Rocks, Sydney</p>
+    <p class="footer__date">18 . 10 . 2026</p>
   </footer>
 
   <script src="js/main.js"></script>
