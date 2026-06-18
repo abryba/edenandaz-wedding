@@ -1,0 +1,44 @@
+name: Price Monitor — daily scrape
+
+# Runs the dealer price scraper once a day and emails the report.
+on:
+  schedule:
+    # 07:00 UTC daily. Adjust as needed (cron is in UTC).
+    - cron: '0 7 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (scrape + log, no DB writes, no email)'
+        type: boolean
+        default: false
+
+concurrency:
+  group: price-monitor-scrape
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: price-monitor
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: price-monitor/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: Run scraper
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          ALERT_FROM_EMAIL: ${{ secrets.ALERT_FROM_EMAIL }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: npm run scrape
